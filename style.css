@@ -1,0 +1,401 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Sous-menus */
+.nav-links .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  min-width: 200px;
+}
+
+.nav-links .submenu li {
+  width: 100%;
+}
+
+.nav-links .submenu a {
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+.nav-links .has-submenu:hover .submenu {
+  display: block;
+}
+
+
+.hero {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+}
+
+.mission {
+  background: #f8f8f8;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.mission h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.services {
+  padding: 4rem 1rem;
+  background: #fff;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Carousel Bureau */
+.carousel {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.carousel h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.carousel .carousel-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.carousel .carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.carousel .carousel-item:hover {
+  transform: translateY(-5px);
+}
+
+.carousel .carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px ;
+  object-fit: cover;
+}
+
+.carousel .carousel-item p {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .carousel .carousel-track {
+    justify-content: center;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+  }
+
+  .carousel .carousel-item {
+    width: 180px;
+  }
+}
+
+/* STRUCTURE GLOBALE */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* SECTION MEMBRES */
+.membres {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.membres h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* BARRE DE RECHERCHE */
+.recherche-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.recherche-input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.recherche-input input {
+  width: 50%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.recherche-input input:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.4);
+}
+
+/* ALPHABET */
+.alphabet-search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.alphabet-search button {
+  padding: 8px 14px;
+  border: none;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.alphabet-search button:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* GRILLE DES MEMBRES (Alternative au carousel si utilisée) */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* CARDS DES MEMBRES */
+.member-card, .carousel-item {
+  background-color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.member-card:hover, .carousel-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.member-card img, .carousel-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #2980b9;
+}
+
+.member-card h3, .carousel-item p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+/* BOUTON CONTACT */
+.contact-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  background-color: #2980b9;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.contact-btn:hover {
+  background-color: #1c5980;
+}
+
+/* CARROUSEL */
+.carousel-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* FOOTER */
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Membres</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="membres">
+    <div class="container">
+      <h2>Nos Membres</h2>
+
+       <h3>Rechercher un architecte</h3>
+
+      <!-- Barre de recherche alphabétique -->
+      <div class="alphabet-search">
+        <script>
+          for (let i = 65; i <= 90; i++) {
+            document.write(`<button>${String.fromCharCode(i)}</button>`);
+          }
+        </script>
+      </div>
+
+      <!-- Liste des membres -->
+      <div class="members-grid">
+        <div class="member-card">
+          <img src="img/Ayan.jpg" alt="Jean Mba" />
+          <h3> Mba Jean</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="img/Ayan.jpg" alt="Anne Ndong" />
+          <h3> Ndong Anne</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/200" alt="Omar Essono" />
+          <h3>Omar Essono</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/200" alt="Léa Boumba" />
+          <h3>Léa Boumba</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/200" alt="Jean Mba" />
+          <h3>Jean Mba</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/200" alt="Anne Ndong" />
+          <h3>Anne Ndong</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/200" alt="Omar Essono" />
+          <h3>Omar Essono</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/200" alt="Léa Boumba" />
+          <h3>Léa Boumba</h3>
+          <a href="#" class="contact-btn">Contactez</a>
+        </div>
+        <!-- Ajoute plus de membres ici -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Ordre des Architectes. Tous droits réservés par khansu group.</p>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.alphabet-search button');
+    const cards = document.querySelectorAll('.member-card');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const letter = button.textContent.toUpperCase();
+        cards.forEach(card => {
+          const name = card.querySelector('h3').textContent.trim().toUpperCase();
+          card.style.display = name.startsWith(letter) ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+
